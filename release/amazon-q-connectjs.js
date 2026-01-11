@@ -34830,7 +34830,9 @@ const getRetryAfterHint = (response) => {
 var __webpack_unused_export__;
 
 __webpack_unused_export__ = ({ value: true });
+const tslib_1 = __webpack_require__(1635);
 const index_1 = __webpack_require__(8156);
+const QConnectSDK = tslib_1.__importStar(__webpack_require__(221));
 (() => {
     const connect = __webpack_require__.g.connect || {};
     const qconnectjs = connect.qconnectjs || {};
@@ -34854,6 +34856,12 @@ const index_1 = __webpack_require__(8156);
         QueryAssistant: index_1.QueryAssistant,
         SearchSessions: index_1.SearchSessions,
     };
+    qconnectjs.sdk = QConnectSDK;
+    Object.keys(QConnectSDK).forEach((key) => {
+        if (!qconnectjs[key]) {
+            qconnectjs[key] = QConnectSDK[key];
+        }
+    });
 })();
 
 
@@ -37598,6 +37606,7 @@ function toHex(bytes) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.QConnectSDK = void 0;
 const tslib_1 = __webpack_require__(1635);
 tslib_1.__exportStar(__webpack_require__(3985), exports);
 tslib_1.__exportStar(__webpack_require__(4174), exports);
@@ -37606,6 +37615,7 @@ tslib_1.__exportStar(__webpack_require__(6086), exports);
 tslib_1.__exportStar(__webpack_require__(5758), exports);
 tslib_1.__exportStar(__webpack_require__(4734), exports);
 tslib_1.__exportStar(__webpack_require__(5488), exports);
+exports.QConnectSDK = tslib_1.__importStar(__webpack_require__(221));
 
 
 /***/ }),
